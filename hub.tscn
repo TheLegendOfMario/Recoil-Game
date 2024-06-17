@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://btjkdjjifhdbs"]
+
+[ext_resource type="Texture2D" uid="uid://bw7w5ih5a0bhv" path="res://Hub.png" id="1_ht5yo"]
+[ext_resource type="Script" path="res://hub.gd" id="1_kechu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dj8a2"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dccjf"]
+size = Vector2(32, 32)
+
+[node name="Hub" type="RigidBody2D" groups=["hub"]]
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_kechu")
+
+[node name="collision" type="Area2D" parent="." groups=["hub"]]
+position = Vector2(64, 63)
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision"]
+shape = SubResource("RectangleShape2D_dj8a2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
+scale = Vector2(4, 4)
+texture = ExtResource("1_ht5yo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(64, 64)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_dccjf")
