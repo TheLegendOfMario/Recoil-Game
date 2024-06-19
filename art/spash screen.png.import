@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djhmjywqx8maj"
-path="res://.godot/imported/cannon.png-f77e13959ce355916ec84b043cdbbce5.ctex"
+uid="uid://bhbckvj86wuot"
+path="res://.godot/imported/spash screen.png-8a658d44619de99370e0855ebcd7b167.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cannon.png"
-dest_files=["res://.godot/imported/cannon.png-f77e13959ce355916ec84b043cdbbce5.ctex"]
+source_file="res://art/spash screen.png"
+dest_files=["res://.godot/imported/spash screen.png-8a658d44619de99370e0855ebcd7b167.ctex"]
 
 [params]
 

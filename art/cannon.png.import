@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw7w5ih5a0bhv"
-path="res://.godot/imported/Hub.png-e15efeace13a0105fa076bf10b3dae99.ctex"
+uid="uid://djhmjywqx8maj"
+path="res://.godot/imported/cannon.png-9047b6024e8a824f776aab7dd05ec9f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Hub.png"
-dest_files=["res://.godot/imported/Hub.png-e15efeace13a0105fa076bf10b3dae99.ctex"]
+source_file="res://art/cannon.png"
+dest_files=["res://.godot/imported/cannon.png-9047b6024e8a824f776aab7dd05ec9f2.ctex"]
 
 [params]
 

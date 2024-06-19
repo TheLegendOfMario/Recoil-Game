@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://btjkdjjifhdbs"]
 
-[ext_resource type="Texture2D" uid="uid://bw7w5ih5a0bhv" path="res://Hub.png" id="1_ht5yo"]
-[ext_resource type="Script" path="res://hub.gd" id="1_kechu"]
+[ext_resource type="Texture2D" uid="uid://bw7w5ih5a0bhv" path="res://art/Hub.png" id="1_ht5yo"]
+[ext_resource type="Script" path="res://scripts/hub.gd" id="1_kechu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dj8a2"]
 size = Vector2(32, 32)

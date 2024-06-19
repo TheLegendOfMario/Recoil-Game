@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhbckvj86wuot"
-path="res://.godot/imported/spash screen.png-840aa976f36ea3dce95a9c3a63c3240f.ctex"
+uid="uid://bhftvlrbh7vbw"
+path="res://.godot/imported/slope-left-up.png-6ecd6346e485dea75d6e9737e321ceda.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spash screen.png"
-dest_files=["res://.godot/imported/spash screen.png-840aa976f36ea3dce95a9c3a63c3240f.ctex"]
+source_file="res://art/slope-left-up.png"
+dest_files=["res://.godot/imported/slope-left-up.png-6ecd6346e485dea75d6e9737e321ceda.ctex"]
 
 [params]
 

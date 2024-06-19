@@ -1,21 +1,21 @@
 [gd_scene load_steps=5 format=3 uid="uid://bywhbfspwed6w"]
 
-[ext_resource type="Script" path="res://bullet.gd" id="1_ahcur"]
-[ext_resource type="Texture2D" uid="uid://oiyupjons30" path="res://Circle.png" id="1_eu6uc"]
-[ext_resource type="Texture2D" uid="uid://rrne1bsgm3im" path="res://light-texture.webp" id="3_7j86r"]
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_loxn2"]
+[ext_resource type="Texture2D" uid="uid://oiyupjons30" path="res://art/Circle.png" id="2_ssg2m"]
+[ext_resource type="Texture2D" uid="uid://rrne1bsgm3im" path="res://art/light-texture.webp" id="3_s78c2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4wib1"]
 radius = 9.99998
 
 [node name="Bullet" type="Area2D" groups=["bullet"]]
 position = Vector2(24, 24)
-script = ExtResource("1_ahcur")
+script = ExtResource("1_loxn2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(9.53674e-07, 9.53674e-07)
 rotation = -1.57079
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_eu6uc")
+texture = ExtResource("2_ssg2m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(9.53674e-07, 9.53674e-07)
@@ -27,7 +27,7 @@ one_shot = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(0.671875, 0.671875)
-texture = ExtResource("3_7j86r")
+texture = ExtResource("3_s78c2")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="KillTimer" to="." method="_on_kill_timer_timeout"]

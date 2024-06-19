@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://blh38w2ch00dh"]
+[gd_scene load_steps=9 format=3 uid="uid://blh38w2ch00dh"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_sbnkj"]
-[ext_resource type="PackedScene" uid="uid://bywhbfspwed6w" path="res://bullet.tscn" id="2_hya7a"]
-[ext_resource type="Texture2D" uid="uid://oiyupjons30" path="res://Circle.png" id="2_ysn42"]
-[ext_resource type="Texture2D" uid="uid://djhmjywqx8maj" path="res://cannon.png" id="3_kq7ri"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="1_sbnkj"]
+[ext_resource type="PackedScene" uid="uid://bywhbfspwed6w" path="res://scenes/bullet.tscn" id="2_hya7a"]
+[ext_resource type="Texture2D" uid="uid://oiyupjons30" path="res://art/Circle.png" id="2_ysn42"]
+[ext_resource type="Texture2D" uid="uid://djhmjywqx8maj" path="res://art/cannon.png" id="3_kq7ri"]
 
 [sub_resource type="Gradient" id="Gradient_iyhfj"]
 offsets = PackedFloat32Array(0.012987, 1)
@@ -15,6 +15,12 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.211009, 0.87156)
 metadata/_snap_count = 2
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hw1rs"]
+polygon = PackedVector2Array(10, -22.9, 10, -21, 20, -14, 20, -11.6, 24, -5.6, 24, 7, 22.4, 7, 19.4, 15, 17.7, 15, 5.7, 24, -5.6, 24, -20, 14, -20, 11.6, -24, 5.6, -24, -5.3, -22.4, -10, -21, -10, -14, -20, -11.5, -20, -7, -22.2, -7, -24.2)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5iov3"]
+polygon = PackedVector2Array(46, 9.9, 49, 11.9, 49, 53, 47.1, 53, 45.1, 56, 18, 56, 18, 54.1, 15, 52.1, 15, 11.9, 18, 9.9, 18, 8, 46, 8)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(544, 272)
@@ -49,8 +55,16 @@ polygon = PackedVector2Array(8, -19, 13, -16, 15, -13, 54, -13, 54, 13, 15, 13, 
 polygon = PackedVector2Array(8, -19, 13, -16, 15, -13, 54, -13, 54, 13, 15, 13, 13, 16, 8, 19, 3, 20, -3, 20, -8, 19, -18, 11, -20, 5, -20, -5, -19, -8, -18, -10, -15, -15, -8, -19, -5, -20, 5, -20)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(9.53674e-07, -1.71661e-05)
-scale = Vector2(3.0625, 3.0625)
+position = Vector2(2.28882e-05, -7.62939e-06)
+scale = Vector2(7.32812, 7.32812)
 texture = SubResource("GradientTexture2D_u2wdo")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_hw1rs")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(2, 32)
+rotation = -1.5708
+occluder = SubResource("OccluderPolygon2D_5iov3")
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

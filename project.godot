@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="Recoil"
-run/main_scene="res://main.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-boot_splash/image="res://spash screen.png"
+boot_splash/image="res://art/spash screen.png"
 boot_splash/use_filter=false
-config/icon="res://icon.svg"
+config/icon="res://art/icon.svg"
 
 [autoload]
 
-Globalpos="*res://globalpos.gd"
+Globalpos="*res://scripts/globalpos.gd"
 
 [display]
 
