@@ -7,7 +7,7 @@
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dccjf"]
-size = Vector2(32, 32)
+size = Vector2(128, 128)
 
 [node name="Hub" type="RigidBody2D" groups=["hub"]]
 collision_mask = 0
@@ -15,18 +15,14 @@ gravity_scale = 0.0
 script = ExtResource("1_kechu")
 
 [node name="collision" type="Area2D" parent="." groups=["hub"]]
-position = Vector2(64, 63)
 scale = Vector2(4, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collision"]
 shape = SubResource("RectangleShape2D_dj8a2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(64, 64)
 scale = Vector2(4, 4)
 texture = ExtResource("1_ht5yo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(64, 64)
-scale = Vector2(4, 4)
 shape = SubResource("RectangleShape2D_dccjf")
