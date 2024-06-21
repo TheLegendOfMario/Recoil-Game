@@ -1,5 +1,5 @@
 extends Node
-var global_hub_pos
+var enemy_count = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
