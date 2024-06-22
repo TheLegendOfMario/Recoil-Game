@@ -17,7 +17,7 @@ func _on_body_entered(body):
 		explode()
 
 func explode():
-	scale = Vector2(4, 4)
+	scale = Vector2(6, 6)
 	
 	can_move = false
 	$KillTimer.start()

@@ -21,7 +21,7 @@ func _physics_process(delta):
 		look_at(get_global_mouse_position())
 	# Add the gravity.
 	#if not is_on_floor():
-	velocity.y += gravity/2 * delta
+	velocity.y -= gravity/2 * delta
 	if Input.is_action_pressed("left"):
 		rotation -= rotatsped
 		using_keyboard = true

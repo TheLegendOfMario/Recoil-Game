@@ -19,6 +19,7 @@ func _process(delta):
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	if Input.is_action_just_pressed("reset"):
+		Globalpos.enemy_count = 0
 		get_tree().reload_current_scene()
 
 
