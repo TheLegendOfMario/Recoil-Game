@@ -113,7 +113,7 @@ texture = SubResource("GradientTexture2D_t7yut")
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 process_mode = 1
 position = Vector2(546, 688)
-color = Color(0.347817, 0.347817, 0.347817, 1)
+color = Color(0.125911, 0.125911, 0.125911, 1)
 
 [node name="Player" parent="." instance=ExtResource("5_tl5mp")]
 process_mode = 1

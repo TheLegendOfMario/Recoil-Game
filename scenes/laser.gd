@@ -17,11 +17,11 @@ func _on_body_entered(body):
 		explode()
 
 func explode():
-	scale = Vector2(6, 6)
+	#scale = Vector2(6, 6)
+	queue_free()
 	
-	scale = Vector2(8,8)
-	can_move = false
-	$KillTimer.start()
+	#$KillTimer.start()
 
 func _on_kill_timer_timeout():
-	queue_free()
+	#queue_free()
+	pass

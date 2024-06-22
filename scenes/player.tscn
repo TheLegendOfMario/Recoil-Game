@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://blh38w2ch00dh"]
+[gd_scene load_steps=10 format=3 uid="uid://blh38w2ch00dh"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_sbnkj"]
 [ext_resource type="PackedScene" uid="uid://bywhbfspwed6w" path="res://scenes/bullet.tscn" id="2_hya7a"]
 [ext_resource type="Texture2D" uid="uid://oiyupjons30" path="res://art/Circle.png" id="2_ysn42"]
 [ext_resource type="Texture2D" uid="uid://djhmjywqx8maj" path="res://art/cannon.png" id="3_kq7ri"]
+[ext_resource type="PackedScene" uid="uid://xelpdu2jtww1" path="res://scenes/laser.tscn" id="3_xg6yq"]
 
 [sub_resource type="Gradient" id="Gradient_iyhfj"]
 offsets = PackedFloat32Array(0.012987, 1)
@@ -26,11 +27,16 @@ polygon = PackedVector2Array(46, 9.9, 49, 11.9, 49, 53, 47.1, 53, 45.1, 56, 18, 
 position = Vector2(544, 272)
 script = ExtResource("1_sbnkj")
 Bullet = ExtResource("2_hya7a")
+altbullet = ExtResource("3_xg6yq")
 metadata/_edit_horizontal_guides_ = [0.0]
 metadata/_edit_vertical_guides_ = [62.0, -38.0]
 
 [node name="ShootTimer" type="Timer" parent="."]
 wait_time = 0.25
+one_shot = true
+
+[node name="AltShootTimer" type="Timer" parent="."]
+wait_time = 0.084
 one_shot = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -68,3 +74,4 @@ rotation = -1.5708
 occluder = SubResource("OccluderPolygon2D_5iov3")
 
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="AltShootTimer" to="." method="_on_alt_shoot_timer_timeout"]
