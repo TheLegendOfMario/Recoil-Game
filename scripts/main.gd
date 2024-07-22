@@ -1,5 +1,6 @@
 extends Node2D
 @export var enemyscene : PackedScene
+@export var firstscene : PackedScene
 var maxenemies = 30
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -9,6 +10,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	$Player/Camera2D/CanvasLayer/Label.text = str(Engine.get_frames_per_second(), "  ", $Player/ShootTimer.time_left)
+	$Player/Camera2D/CanvasLayer/score.text = str(Globalpos.score)
 	if $Player.using_keyboard:
 		$Player/Camera2D/CanvasLayer/Label2.text = "\n\n\nthe keyboard is ON.\npress 'O' to turn it off."
 	if not $Player.using_keyboard:
@@ -21,6 +23,8 @@ func _process(delta):
 	if Input.is_action_just_pressed("reset"):
 		Globalpos.enemy_count = 0
 		get_tree().reload_current_scene()
+	if Globalpos.health <= 0:
+		get_tree().change_scene_to_packed(firstscene)
 
 
 func _on_enemy_timer_timeout():

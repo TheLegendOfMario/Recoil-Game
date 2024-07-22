@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://btjkdjjifhdbs"]
+[gd_scene load_steps=7 format=3 uid="uid://btjkdjjifhdbs"]
 
 [ext_resource type="Texture2D" uid="uid://bw7w5ih5a0bhv" path="res://art/Hub.png" id="1_ht5yo"]
 [ext_resource type="Script" path="res://scripts/hub.gd" id="1_kechu"]
+[ext_resource type="FontFile" uid="uid://bqvxadmypne2p" path="res://fonts/Kenney Future Narrow.ttf" id="3_84fh2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dj8a2"]
-size = Vector2(32, 32)
+size = Vector2(32, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dccjf"]
 size = Vector2(128, 128)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0h5s"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="Hub" type="RigidBody2D" groups=["hub"]]
 collision_mask = 0
@@ -18,6 +22,7 @@ script = ExtResource("1_kechu")
 scale = Vector2(4, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collision"]
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_dj8a2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -26,3 +31,15 @@ texture = ExtResource("1_ht5yo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dccjf")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -72.0
+offset_top = -96.0
+offset_right = 72.0
+offset_bottom = -69.0
+theme_override_fonts/font = ExtResource("3_84fh2")
+theme_override_styles/background = SubResource("StyleBoxFlat_c0h5s")
+value = 100.0
+show_percentage = false
+
+[connection signal="area_entered" from="collision" to="." method="_on_collision_area_entered"]

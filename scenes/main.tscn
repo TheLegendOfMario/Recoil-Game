@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://c081k5ci3cgm0"]
+[gd_scene load_steps=17 format=3 uid="uid://c081k5ci3cgm0"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pw6i4"]
 [ext_resource type="Texture2D" uid="uid://bk4au67bnex5" path="res://art/icon.svg" id="2_mforp"]
 [ext_resource type="PackedScene" uid="uid://btjkdjjifhdbs" path="res://scenes/hub.tscn" id="3_i7yg4"]
 [ext_resource type="Texture2D" uid="uid://bhftvlrbh7vbw" path="res://art/slope-left-up.png" id="3_ka884"]
+[ext_resource type="PackedScene" uid="uid://d5a0u4baoryy" path="res://scenes/main_menu.tscn" id="3_v3dcw"]
 [ext_resource type="PackedScene" uid="uid://jpwgop5jg87s" path="res://scenes/enemy.tscn" id="4_xhr7y"]
 [ext_resource type="PackedScene" uid="uid://blh38w2ch00dh" path="res://scenes/player.tscn" id="5_tl5mp"]
 
@@ -92,6 +93,7 @@ point_count = 4
 [node name="Main" type="Node2D"]
 script = ExtResource("1_pw6i4")
 enemyscene = ExtResource("4_xhr7y")
+firstscene = ExtResource("3_v3dcw")
 metadata/_edit_vertical_guides_ = [500.0]
 
 [node name="TileMap" type="TileMap" parent="." groups=["walls"]]
@@ -112,7 +114,7 @@ texture = SubResource("GradientTexture2D_t7yut")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 process_mode = 1
-position = Vector2(546, 688)
+position = Vector2(576, 704)
 color = Color(0.125911, 0.125911, 0.125911, 1)
 
 [node name="Player" parent="." instance=ExtResource("5_tl5mp")]
@@ -138,6 +140,15 @@ process_mode = 1
 offset_right = 120.0
 offset_bottom = 64.0
 metadata/_edit_use_anchors_ = true
+
+[node name="score" type="Label" parent="Player/Camera2D/CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 process_mode = 1
